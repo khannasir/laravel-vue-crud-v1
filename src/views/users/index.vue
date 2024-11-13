@@ -8,9 +8,15 @@ onMounted(() => getUsers())
 </script>
 
 <template>
-  <main>
-    <div class="mt-5">
-      <div class="flex justify-end m-2 p-2">
+  <div class="mt-5 bg-white">
+    <div class="text-center">
+      <h1 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-2xl">Users List</h1>
+    </div>
+    <div class="mx-auto max-w-4xl py-4 sm:py-10 lg:py-10">
+      <div class="flex justify-between m-2 p-2">
+        <RouterLink :to="{ name: 'home' }" class="px-4 py-2 bg-indigo-500 text-slate-50 rounded"
+          >Home</RouterLink
+        >
         <RouterLink
           :to="{ name: 'userCreate' }"
           class="px-4 py-2 bg-indigo-500 text-slate-50 rounded"
@@ -41,12 +47,12 @@ onMounted(() => getUsers())
               <td class="px-6 py-4">
                 <RouterLink
                   :to="{ name: 'userEdit', params: { id: user.id } }"
-                  class="px-4 py-2 font-medium bg-blue-600 text-white mr-1 rounded"
+                  class="px-3 py-2 font-medium bg-blue-600 text-white mr-1 rounded"
                   >Edit</RouterLink
                 >
 
                 <button
-                  class="px-4 py-2 font-medium bg-red-600 text-white mr-1 rounded"
+                  class="px-3 py-2 font-medium bg-red-600 text-white mr-1 rounded"
                   @click="deleteUser(user.id)"
                 >
                   Delete
@@ -57,5 +63,5 @@ onMounted(() => getUsers())
         </table>
       </div>
     </div>
-  </main>
+  </div>
 </template>
